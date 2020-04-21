@@ -2,8 +2,8 @@ package streamExample;
 
 import java.util.Calendar;
 
+import org.junit.Assert;
 import org.junit.Test;
-import org.testng.Assert;
 
 import com.streams.main.StreamExample2;
 

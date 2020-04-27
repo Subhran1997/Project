@@ -2,11 +2,17 @@ package com.streams.main;
 
 import java.io.Closeable;
 
+/**
+ * @author Subhranshu.
+ *
+ */
 public final class Compose {
 
-    private Compose() { }
-
-    public static Runnable runnables(final Runnable a, final Runnable b) {
+    private Compose() {
+    }
+    
+    public static Runnable runnables(
+            final Runnable a, final Runnable b) {
         return new Runnable() {
             @Override
             public void run() {
@@ -15,7 +21,8 @@ public final class Compose {
                 } catch (Throwable e1) {
                     try {
                         b.run();
-                    } catch (Throwable ignore) { }
+                    } catch (Throwable ignore) {
+                    }
                     handleException(e1);
                 }
                 b.run();
@@ -23,7 +30,8 @@ public final class Compose {
         };
     }
 
-    public static Runnable closeables(final Closeable a, final Closeable b) {
+    public static Runnable closeables(
+            final Closeable a, final Closeable b) {
         return new Runnable() {
             @Override
             public void run() {
@@ -32,7 +40,8 @@ public final class Compose {
                 } catch (Throwable e1) {
                     try {
                         b.close();
-                    } catch (Throwable ignore) { }
+                    } catch (Throwable ignore) {
+                    }
                     handleException(e1);
                 }
                 try {
@@ -44,7 +53,7 @@ public final class Compose {
         };
     }
 
-    private static Throwable handleException(Throwable e) {
+    private static Throwable handleException(final Throwable e) {
         // Errors and runtime exceptions are thrown as is
         // Checked exceptions are wrapped in RuntimeException
         if (e instanceof RuntimeException) {
@@ -55,58 +64,47 @@ public final class Compose {
             throw new RuntimeException(e);
         }
     }
-    //public final class Compose {
+    // public final class Compose {
 
-       private void Compose1() { }
-
-        public static Runnable runnables1(final Runnable a, final Runnable b) {
-            return new Runnable() {
-                @Override
-                public void run() {
+    public static Runnable runnables1(
+            final Runnable a, final Runnable b) {
+        return new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    a.run();
+                } catch (Throwable e1) {
                     try {
-                        a.run();
-                    } catch (Throwable e1) {
-                        try {
-                            b.run();
-                        } catch (Throwable ignore) { }
-                        handleException(e1);
+                        b.run();
+                    } catch (Throwable ignore) {
                     }
-                    b.run();
+                    handleException(e1);
                 }
-            };
-        }
-
-        public static Runnable closeables1(final Closeable a, final Closeable b) {
-            return new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        a.close();
-                    } catch (Throwable e1) {
-                        try {
-                            b.close();
-                        } catch (Throwable ignore) { }
-                        handleException(e1);
-                    }
-                    try {
-                        b.close();
-                    } catch (Throwable e2) {
-                        handleException(e2);
-                    }
-                }
-            };
-        }
-
-        private static Throwable handleException1(Throwable e) {
-            // Errors and runtime exceptions are thrown as is
-            // Checked exceptions are wrapped in RuntimeException
-            if (e instanceof RuntimeException) {
-                throw (RuntimeException) e;
-            } else if (e instanceof Error) {
-                throw (Error) e;
-            } else {
-                throw new RuntimeException(e);
+                b.run();
             }
-        }
+        };
     }
 
+    public static Runnable closeables1(
+            final Closeable a, final Closeable b) {
+        return new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    a.close();
+                } catch (Throwable e1) {
+                    try {
+                        b.close();
+                    } catch (Throwable ignore) {
+                    }
+                    handleException(e1);
+                }
+                try {
+                    b.close();
+                } catch (Throwable e2) {
+                    handleException(e2);
+                }
+            }
+        };
+    }
+}

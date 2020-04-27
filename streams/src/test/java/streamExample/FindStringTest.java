@@ -30,7 +30,7 @@ public class FindStringTest {
      * First test case of first String with first character.
      */
     @Test
-    public void testWithFirstChar() {
+    public void testFirstChar() {
         Stream<String> names = Stream.of("PI", "AB", "DC", "LL");
         String name = "D";
         assertEquals(findStirngWithFirstCharacter.
@@ -38,7 +38,7 @@ public class FindStringTest {
     }
 
     @Test
-    public void testWithUpperCase() {
+    public void testUpperCase() {
         Stream<String> names = Stream.of("PI", "AB", "DC", "LL");
         String name = "P";
         assertEquals(findStirngWithFirstCharacter.
@@ -46,7 +46,7 @@ public class FindStringTest {
     }
 
     @Test
-    public void testWithLowerCase() {
+    public void testLowerCase() {
         Stream<String> names = Stream.of("pi", "ab", "dc", "ll");
         String name = "a";
         assertEquals(findStirngWithFirstCharacter.
@@ -54,7 +54,7 @@ public class FindStringTest {
     }
 
     @Test
-    public void testWithNum() {
+    public void testNum() {
         Stream<String> names = Stream.of("1789", "555", "2478", "399");
         String name = "1";
         assertEquals(findStirngWithFirstCharacter.

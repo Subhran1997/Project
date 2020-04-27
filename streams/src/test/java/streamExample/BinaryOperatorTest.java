@@ -5,6 +5,10 @@ import org.testng.annotations.Test;
 
 import com.streams.main.BinaryOperators;
 
+/**
+ * @author Subhranshu
+ *
+ */
 public class BinaryOperatorTest {
 
      BinaryOperators binaryoperators;
@@ -14,7 +18,7 @@ public class BinaryOperatorTest {
          binaryoperators = new BinaryOperators();
      }
      @Test
-     public void testTwoNum() {
+     public void testTNum() {
         Integer actual = binaryoperators.additionTwoNum(2, 3);
         Integer expected = 5;
         Assert.assertEquals(actual, expected);

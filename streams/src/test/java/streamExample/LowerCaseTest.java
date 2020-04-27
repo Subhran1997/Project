@@ -12,56 +12,56 @@ import com.streams.main.LowerCase;
 public class LowerCaseTest {
         /**
         */
-        LowerCase lc;
+        LowerCase ab;
         /**
         */
         @BeforeTest
         public void setUp() {
-        lc = new LowerCase();
+        ab = new LowerCase();
         }
         /**
         */
         @Test
-        public void testWithMultipleWords() {
-        List<String> input = Arrays.asList("HELLO", "ABC", "YFJ");
-        List<String> actual = lc.allToLowerCase(input);
-        List<String> expected = Arrays.asList("hello", "abc", "yfj");
+        public void testMultipleWords() {
+        List<String> input = Arrays.asList("HELLO", "ABC", "XYZ");
+        List<String> actual = ab.allToLowerCase(input);
+        List<String> expected = Arrays.asList("hello", "abc", "xyz");
         Assert.assertEquals(expected, actual);
         }
         /**
         */
         @Test
-        public void testWithLowerUpper() {
-        List<String> input = Arrays.asList("Aryav", "Sai", "kuMaR");
-        List<String> actual = lc.allToLowerCase(input);
-        List<String> expected = Arrays.asList("aryav", "sai", "kumar");
+        public void testLowerUpper() {
+        List<String> input = Arrays.asList("Subhran", "subbu", "Sekhar");
+        List<String> actual = ab.allToLowerCase(input);
+        List<String> expected = Arrays.asList("subhran", "subbu", "sekhar");
         Assert.assertEquals(actual, expected);
         }
         /**
         */
         @Test
-        public void testWithnumbersWords() {
-        List<String> input = Arrays.asList("HELLO", "ABC", "67");
-        List<String> actual = lc.allToLowerCase(input);
-        List<String> expected = Arrays.asList("hello", "abc", "67");
+        public void testnumbersWords() {
+        List<String> input = Arrays.asList("HELLO", "ABC", "89");
+        List<String> actual = ab.allToLowerCase(input);
+        List<String> expected = Arrays.asList("hello", "abc", "89");
         Assert.assertEquals(expected, actual);
         }
         /**
         */
         @Test
-        public void testWithNumbers() {
+        public void testNumbers() {
         List<String> input = Arrays.asList("12334", "12", "567");
-        List<String> actual = lc.allToLowerCase(input);
+        List<String> actual = ab.allToLowerCase(input);
         List<String> expected = Arrays.asList("12334", "12", "567");
         Assert.assertEquals(expected, actual);
         }
         /**
         */
         @Test
-        public void testWithLowerCase() {
-        List<String> input = Arrays.asList("abc", "bca", "def");
-        List<String> actual = lc.allToLowerCase(input);
-        List<String> expected = Arrays.asList("abc", "bca", "def");
+        public void testLowerCase() {
+        List<String> input = Arrays.asList("abc", "xyz", "def");
+        List<String> actual = ab.allToLowerCase(input);
+        List<String> expected = Arrays.asList("abc", "xyz", "def");
         Assert.assertEquals(expected, actual);
         }
         }

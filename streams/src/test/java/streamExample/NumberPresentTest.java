@@ -45,7 +45,7 @@ public class NumberPresentTest {
     }
 
     @Test
-    public void testWithHalfMinusNum() {
+    public void testHalfMinusNum() {
         Stream<Integer> stream = Stream.of(7, -8, -9, -1);
         int num = 4;
         assertEquals(isNumberPresentStream.
@@ -53,7 +53,7 @@ public class NumberPresentTest {
     }
 
     @Test
-    public void testWithZeroNum() {
+    public void testZeroNum() {
         Stream<Integer> stream = Stream.of(0, 0, 0, 0);
         int num = 4;
         assertEquals(isNumberPresentStream.
@@ -61,7 +61,7 @@ public class NumberPresentTest {
     }
 
     @Test
-    public void testWithDuplicateNum() {
+    public void testDuplicateNum() {
         Stream<Integer> stream = Stream.of(9, 9, 1, 1);
         int num = 4;
         assertEquals(isNumberPresentStream.

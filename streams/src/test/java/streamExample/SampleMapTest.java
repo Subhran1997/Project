@@ -29,7 +29,7 @@ samplemap = new SampleMap();
 * 
 */
 @Test
-public void testWithMultiplyNum() {
+public void testMultiplyNum() {
 List<Integer> list = new ArrayList<Integer>();
 list.add(5);
 list.add(10);
@@ -41,14 +41,14 @@ Assert.assertEquals(actual, expected);
 }
 
 @Test
-public void TestWithEvenNum() {
+public void TestEvenNum() {
 List<Integer> list = new ArrayList<Integer>();
 list.add(4);
 list.add(8);
 list.add(2);
 list.add(12);
 List<Integer> actual= SampleMap.multiplyNum(list);
-List<Integer> expected = Arrays.asList(16, 64, 4, 144);
+List<Integer>expected = Arrays.asList(16, 64, 4, 144);
 Assert.assertEquals(actual, expected);
 }
 
